@@ -1,7 +1,7 @@
 package InterviewCake;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+//import org.testng.Assert;
+//import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,19 +75,19 @@ public class Integr {
 //        Assert.assertEquals(result.size(), expected.size());
 //    }
 
-    @Test
-    public void testZeroSizeArray() {
-        List<int[]> listA = new ArrayList<int[]>();
-        listA.add(new int[] { 15, 16 });
-
-        List<int[]> listB = new ArrayList<int[]>();
-        listB.add( new int[] { 1, 2 } );
-        listB.add( new int[] { 9, 11 } );
-        listB.add( new int[] { 12, 14 } );
-
-        ArrayList<int []> result = getOverlapIntervals(listA, listB);
-        Assert.assertEquals(result.size(), 0);
-    }
+//    @Test
+//    public void testZeroSizeArray() {
+//        List<int[]> listA = new ArrayList<int[]>();
+//        listA.add(new int[] { 15, 16 });
+//
+//        List<int[]> listB = new ArrayList<int[]>();
+//        listB.add( new int[] { 1, 2 } );
+//        listB.add( new int[] { 9, 11 } );
+//        listB.add( new int[] { 12, 14 } );
+//
+//        ArrayList<int []> result = getOverlapIntervals(listA, listB);
+//        Assert.assertEquals(result.size(), 0);
+//    }
 //
 //    @Test
 //    public void testSomeArray() {

@@ -1,8 +1,8 @@
 package InterviewCake;
-
-import org.junit.internal.runners.statements.ExpectException;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+//
+//import org.junit.internal.runners.statements.ExpectException;
+//import org.testng.Assert;
+//import org.testng.annotations.Test;
 
 /**
  * Created by alekspribysh on 10/13/16.
@@ -30,16 +30,16 @@ public class SecondLargestElement {
     int [] arr1 =  new  int[0];
 
 
-    @Test()
-
-    public void test() throws Exception {
-
-        //Assert.assertEquals(findElement(arr), 7);
-        Assert.assertEquals(findElem(arr), 7);
-        //findElement(arr1);
-        findElem(arr);
-
-    }
+//    @Test()
+//
+//    public void test() throws Exception {
+//
+//        //Assert.assertEquals(findElement(arr), 7);
+//        Assert.assertEquals(findElem(arr), 7);
+//        //findElement(arr1);
+//        findElem(arr);
+//
+//    }
 
 
 }
