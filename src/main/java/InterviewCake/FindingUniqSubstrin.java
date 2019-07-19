@@ -76,31 +76,4 @@ public class FindingUniqSubstrin {
 
         return max_len;
     }
-
-
-//    public static int strin(String s) {
-//
-//       String unique =  "" + s.charAt(0);
-//
-//        for (int i = 1; i < s.length(); i++){
-//
-//            int j = i-1;
-//
-//            String temp = "" + s.charAt(i);
-//            while (j >= 0){
-//                if (s.charAt(i) != s.charAt(j)){
-//                    temp +=  s.charAt(j);
-//                }
-//                else {
-//                    break;
-//                }
-//                j--;
-//            }
-//            if (temp.length() > unique.length()){
-//                unique = temp;
-//            }
-//
-//        }
-//        return unique.length();
-//    }
 }

@@ -6,55 +6,47 @@ package InterviewCake;
 public class LongestPalindromeSubstring {
 
     public static void main(String[] args) {
-        System.out.println(longestPalindrome("\"civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth\""));
+        System.out.println(subPalindrome("\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\""));
+
     }
 
-    public static String longestPalindrome(String s) {
+    public static String subPalindrome(String input) {
+        String res = "";
+        if (input.length() == 1) return input;
+        if (input.isEmpty()) return res;
 
-        if (s.length() == 1){
-            return s;
+        for (int i = 0; i < input.length(); i++) {
+            String temp = palindrome(input, i);
+            res = res.length() < temp.length() ? temp : res;
+
         }
-        int maxLen = 0;
-        int start =0;
-        for (int i = 1; i < s.length(); i++ ){
+        return res;
+    }
 
-            int low = i-1;
-            int high = i;
+    public static String palindrome(String s, int index) {
+        String res = s.substring(0, 1);
 
-            while (low >= 0 &&  high < s.length() && s.charAt(low) == s.charAt(high)){
-                if (high-low +1 > maxLen){
+        int start = index - 1;
+        int finish = index;
+        while (start >= 0 && finish < s.length() && s.charAt(start) == s.charAt(finish)) {
 
-                    start  = low;
-                    maxLen = high-low +1;
-                    System.out.println(start + " 1 start");
-                    System.out.println(maxLen + " 1 len");
+            res = res.length() < s.substring(start, finish + 1).length() ? s.substring(start, finish + 1) : res;
 
-                }
-                low--;
-                high++;
-            }
-            low = i;
-            high = i;
-            while (low >= 0 &&  high < s.length() && s.charAt(low) == s.charAt(high)  ){
+            start--;
+            finish++;
+        }
+        start = index - 1;
+        finish = index + 1;
 
-                if (high-low +1 > maxLen){
+        while (start >= 0 && finish < s.length() && s.charAt(start) == s.charAt(finish)) {
 
-                    start  = low;
-                    maxLen = high-low +1;
-                    System.out.println(start + " 2 start");
-                    System.out.println(maxLen + " 2 len");
+            res = res.length() < s.substring(start, finish + 1).length() ? s.substring(start, finish + 1) : res;
 
-                }
-
-                low--;
-                high++;
-            }
+            start--;
+            finish++;
 
         }
 
-        int k = 0;
-
-        return s.substring(start, start + maxLen +1);
-
+        return res;
     }
 }

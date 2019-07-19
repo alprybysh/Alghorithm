@@ -3,12 +3,29 @@
  */
 public class ReverseString {
     public static void main(String[] args) {
-        String s = "Hello world, how are doing today";
-        System.out.println(s);
-        //System.out.println(ReverseString1(s));
-        //System.out.println(ReverseStringinArray(s));
-        System.out.println(reverse(s));
+        String s = "Hello world, how are you doing today?";
+       // System.out.println(s);
 
+      //  System.out.println(reverseSt(s));
+      //  System.out.println(ReverseString1(s));
+        System.out.println(ReverseStringinArray(s));
+      //  System.out.println(reverse(s));
+
+    }
+
+
+    public static String reverseSt(String source){
+
+        int j = source.length()-1;
+        StringBuilder  res = new StringBuilder(source);
+        for (int i = 0;  i <= j; i++){
+            char first = source.charAt(i);
+            char last = source.charAt(j);
+            res.setCharAt(i, last);
+            res.setCharAt(j, first);
+            j--;
+        }
+        return res.toString();
     }
 
 
@@ -26,64 +43,25 @@ public class ReverseString {
             array[j] = temp;
 
         }
-        System.out.println(array);
+      //  System.out.println(array);
 
         return array;
     }
 
-    public static char[] ReverseStringinArray(String s) {
-        char ch = ' ';
-        char temp;
-        char[] array = ReverseString1(s);
-        int count = 0;
-        int count1 =0;
+    public static String ReverseStringinArray(String s) {
 
-        for (int i = 0; i < array.length; i++) {
-
-            count++;
-            if (array[i] == ch) {
-                count = count - 1;
-                int k = i - count;
-                count = count / 2;
-
-                for (int j = i - 1; count > 0; j--) {
-
-                    temp = array[k];
-                    array[k] = array[j];
-                    array[j] = temp;
-                    count--;
-                    k++;
-                }
-                count = 0;
-            }
-
+        String [] ar = s.split(" ");
+        for (int i = 0; i < ar.length/2; i++){
+            String  temp = ar[ar.length-1-i];
+            ar[ar.length-1-i] = ar[i];
+            ar[i] = temp;
         }
+        StringBuilder res = new StringBuilder();
 
-        for (int i = array.length - 1; i > 0 ; i--) {
-
-            if (array[i] == ch) {
-
-                int k = array.length-1;
-                count1 = count1 / 2;
-
-                for (int j = i + 1; count1 > 0; j++) {
-                    temp = array[k];
-                    array[k] = array[j];
-                    array[j] = temp;
-                    count1--;
-                    k--;
-                }
-                break;
-
-            }
-            count1++;
-
-
+        for (String st : ar){
+            res.append(st + " ");
         }
-
-
-
-        return array;
+        return res.toString().trim();
     }
 
 

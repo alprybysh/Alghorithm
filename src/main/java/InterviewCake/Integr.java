@@ -1,7 +1,10 @@
 package InterviewCake;
 
 //import org.testng.Assert;
-//import org.testng.annotations.Test;
+//import org.testng.annotations.BinarySearchRotatedArray;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,31 +54,31 @@ public class Integr {
         }
     }
 
-//    @Test
-//    public void testOverlaps() {
-//        List<int[]> listA = new ArrayList<int[]>();
-//        listA.add(new int[]{0, 5});
-//        listA.add(new int[]{10, 12});
-//        listA.add(new int[]{15, 22});
-//        listA.add(new int[]{30, 33});
-//
-//        List<int[]> listB = new ArrayList<int[]>();
-//        listB.add(new int[]{1, 2});
-//        listB.add(new int[]{9, 11});
-//        listB.add(new int[]{12, 14});
-//        listB.add(new int[]{14, 15});
-//        listB.add(new int[]{27, 35});
-//
-//        List<int[]> expected = new ArrayList<int[]>();
-//        expected.add(new int[]{0, 5});
-//        expected.add(new int[]{9, 11});
-//        expected.add(new int[]{27, 35});
-//
-//        ArrayList<int[]> result = getOverlapIntervals(listA, listB);
-//        Assert.assertEquals(result.size(), expected.size());
-//    }
+    @Test
+    public void testOverlaps() {
+        List<int[]> listA = new ArrayList<int[]>();
+        listA.add(new int[]{0, 5});
+        listA.add(new int[]{10, 12});
+        listA.add(new int[]{15, 22});
+        listA.add(new int[]{30, 33});
 
-//    @Test
+        List<int[]> listB = new ArrayList<int[]>();
+        listB.add(new int[]{1, 2});
+        listB.add(new int[]{9, 11});
+        listB.add(new int[]{12, 14});
+        listB.add(new int[]{14, 15});
+        listB.add(new int[]{27, 35});
+
+        List<int[]> expected = new ArrayList<int[]>();
+        expected.add(new int[]{0, 5});
+        expected.add(new int[]{9, 11});
+        expected.add(new int[]{27, 35});
+
+        ArrayList<int[]> result = getOverlapIntervals(listA, listB);
+        Assert.assertEquals(result.size(), expected.size());
+    }
+
+//    @BinarySearchRotatedArray
 //    public void testZeroSizeArray() {
 //        List<int[]> listA = new ArrayList<int[]>();
 //        listA.add(new int[] { 15, 16 });
@@ -89,7 +92,7 @@ public class Integr {
 //        Assert.assertEquals(result.size(), 0);
 //    }
 //
-//    @Test
+//    @BinarySearchRotatedArray
 //    public void testSomeArray() {
 //        List<int[]> listA = new ArrayList<int[]>();
 //        listA.add( new int[] { 5, 6 } );

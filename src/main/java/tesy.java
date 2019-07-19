@@ -8,15 +8,15 @@ import java.util.*;
 public class tesy {
 
     public static void main(String[] args) {
-        String st = "abcdefg";
+        String st = "abc";
         System.out.println(reverse(st));
 
     }
 
     public static String reverse (String st) {
         if(st.isEmpty()) return st;
-        System.out.println(st.substring(1));
-        System.out.println(st.charAt(0));
+        System.out.println("sub  "+ st.substring(1));
+        System.out.println("char "  + st.charAt(0));
         return reverse(st.substring(1)) + st.charAt(0);
     }
 }
