@@ -1,8 +1,6 @@
 package com.Sortirovka;
 
 
-import javax.xml.soap.Node;
-import java.util.Scanner;
 
 /**
  * Created by alekspribysh on 1/28/16.
@@ -13,7 +11,7 @@ public class BinaryTree {
         new BinaryTree().run();
     }
 
-    static class Node {
+    public static class Node {
         Node left;
 
         Node right;
